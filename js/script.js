@@ -42,6 +42,7 @@ function social(e){
     const facebookl = "https://www.facebook.com/Francinaldo11/"
     const instagraml = "https://www.instagram.com/francinaldo.gomes.56/"
     const twiterl = "https://twitter.com/FrancinaldoGo"
+    const tikTok = "https://www.tiktok.com/@francinaldo_ggomes"
 
     const links = {
         facebook: ()=>{
@@ -52,10 +53,14 @@ function social(e){
         },
         twiter: ()=>{
             location.assign(twiterl)
+        },
+        tiktok: ()=>{
+            location.assign(tikTok)
         }
     }
     if(links[socialLinks]){
         links[socialLinks]()
     }
+    console.log(socialLinks)
 }
 })()
