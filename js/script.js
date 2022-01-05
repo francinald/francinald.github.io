@@ -1,7 +1,37 @@
 (()=>{
 "use strict"
 const gallery = document.getElementsByClassName("links")
-// console.log(gallery)
+const outros = document.getElementsByClassName("outros")[0]
+const btnsSite = setInterval(()=>{
+    outros.style.display = "block"
+    clearInterval(btnsSite)
+},10000)
+
+document.getElementsByClassName("btn-close")[0].addEventListener("click", e=>{
+    const close = outros.style.display = "none"
+})
+
+outros.addEventListener("click", e=>{
+    const sites = e.target.getAttribute("social")
+    if(!sites) return
+    const formulaNegocioOn = "https://go.hotmart.com/B55078080V?ap=032e"
+    const manutecaoCel = "https://go.hotmart.com/E50364308F"
+    const desenvolvimentoWeb = "https://go.hotmart.com/K61657233T"
+    const sitesIndex = {
+        fomulaNegocioOnline: ()=>{
+            window.open(formulaNegocioOn)
+        },
+        manutencao: ()=>{
+            window.open(manutecaoCel)
+        },
+        desenvolvimento: ()=>{
+            window.open(desenvolvimentoWeb)
+        }
+    }
+
+    if(sitesIndex[sites]) sitesIndex[sites]()
+})
+
 gallery[0].addEventListener("click", social)
 function social(e){
 
@@ -27,6 +57,5 @@ function social(e){
     if(links[socialLinks]){
         links[socialLinks]()
     }
-    console.log(e.target.getAttribute("social"))
 }
 })()
