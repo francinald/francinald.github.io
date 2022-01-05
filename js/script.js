@@ -61,6 +61,5 @@ function social(e){
     if(links[socialLinks]){
         links[socialLinks]()
     }
-    console.log(socialLinks)
 }
 })()
